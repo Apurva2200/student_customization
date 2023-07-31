@@ -1,0 +1,57 @@
+<?xml version ="1.0" encoding ="utf-8"?>
+<odoo>
+
+    <!--tree-->
+    <record id="view_student_tree" model="ir.ui.view">
+        <field name="name">student.student.info.tree</field>
+        <field name="model">student.student.info</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="class_name"/>
+                <field name="age"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!--form -->
+    <record id="view_student_form" model="ir.ui.view">
+        <field name="name">student.student.info.form</field>
+        <field name="model">student.student.info</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="class_name"/>
+                            <field name="age"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Action -->
+    <record id="view_student_action" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student.student.info</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_no content_smiling_face">
+                Welcome School Management System !!!
+                create your first student
+            </p>
+        </field>
+    </record>
+
+    <!--menu-->
+    <menuitem id="student_academy_root"
+              name="Student Git"
+              action="view_student_action"
+              sequence="10"/>
+</odoo>
